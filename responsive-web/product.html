@@ -10,38 +10,227 @@
             background-color: #eee;
             font-family: 'Lato', sans-serif;
         }
+        header {
+            position: fixed;
+            top: 0;
+            min-height: 75px;
+            padding: 0px 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #eee;
+        }
+            @media (max-width: 600px) {
+                header {
+                    flex-wrap: wrap;
+                }
+            }
         #nav-bar {
             display: flex;
-            float: left;
-            justify-content: right;
+            justify-content: space-between;
+        }
+        .page-link {
+            display: flex;
+            justify-content: space-around;
+            width: 50vw;
         }
 
+        .page-link > a {
+            display: inline-block;
+            width: 100px;
+            line-height: 42px;
+        }
+        .logo {
+            width: 40vw;
+        }
+        li {
+            list-style: none;
+        }
+        form {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        #email {
+            width: 20vw;
+            padding: 10px 10px;
+            margin: 13px 15px;
+        }
+        .email-button {
+            width: 15%;
+            padding: 5px;
+            width: 15%;
+            padding: 5px;
+            display: inline-block;
+            text-align: center;
+            background-color: orange;
+            border-radius: 1px;
+            color: black;
+            font-size: 1em;
+            height: 32px;
+            width: 13%;
+            margin: 10px;
+            border: 0px solid;
+        }
+        #features {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .features-description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 125px;
+            width: 80vw;
+            padding: 5px;
 
+        }
+        @media (max-width: 650px) {
+            #features {
+                margin-top: 0;
+            }
+        }
+        #howitworks {
+            text-align: center;
+            padding-top: 30px;
+        }
+        #pricing {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 10%;
+        }
+        footer {
+            margin-top: 30px;
+            background-color: #ddd;
+            padding: 20px;
+        }
+        footer ul {
+            display: flex;
+            justify-content: flex-end;
+        }
+        footer span {
+            margin-top: 5px;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 0.9em;
+            color: #444;
+        }
+        .price-plan {border: 1px solid black;padding: 5px;width: calc(100% / 3);margin: 10px;     display: flex;
+    flex-direction: column;
+    align-items: center;}
+        .btn {
+            padding: 0 20px;
+            height: 40px;
+            font-size: 1em;
+            font-weight: 900;
+            text-transform: uppercase;
+            border: 0px black solid;
+            border-radius: 2px;
+            cursor: pointer;
+            background-color: orange;
+        }
 
+        #header-img {
+            width: 100%;
+            height: 100%;
+            max-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-left: 20px;
+        }
     </style>
 
 </head>
 
 <body>
         <header id="header" >
+
+            <nav id="nav-bar" >
                 <div class="logo">
-                    <img "id="header-img" src="" alt="" />
+                    <img id="header-img" src="https://about.canva.com/wp-content/uploads/sites/3/2016/08/logos-1.png" alt="" />
                 </div>
-                <nav id="nav-bar" >
-                    <a class="nav-link">Features</a>
-                    <a class="nav-link">How it Works</a>
-                    <a class="nav-link">Pricing</a>
-                </nav>
+                <div class="page-link">
+                    <ul>
+                        <li><a class="nav-link" href="#features">Features</a></li>
+                    </ul>
+                    <ul>
+                            <li><a class="nav-link" href="#howitworks">How it Works</a></li>
+                    </ul>
+                    <ul>
+                        <li><a class="nav-link"  href="#pricing" >Pricing</a></li>
+                    </ul>
+                </div>
+            </nav>
         </header>
         <section >
-            <form  id="form">
-                <input type="email" name="" id="email">
-                <button type="submit"> Get Started</button>
+            <form  id="form" name="form" action="https://www.freecodecamp.com/email-submit">
+                <h2>Handcrafted, home-made masterpieces</h2>
+                <input type="email" name="email" id="email"  placeholder="Enter your email address" />
+                <input type="submit" id="submit" class="email-button"> Get Started</input>
             </form>
         </section>
-        <section id="">
-            <video id="video"></video>
-        </section>
+        <div class="container">
+            <section id="features">
+                <div class="features-description">
+                    <h3>Premium Materials</h3>
+                    <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.</p>
+                </div>
+                <div class="features-description">
+                    <h3>Fast Shipping</h3>
+                    <p>We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
+                </div>
+                <div class="features-description">
+                    <h3>Quality Assurance</h3>
+                    <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.</p>
+                </div>
+            </section>
+            <section id="howitworks">
+                    <video  id="video" width="500" height="360" controls>
+                            <source src="https://youtu.be/y8Yv4pnO7qc" type="video/mp4">
+                          Your browser does not support the video tag.
+                    </video>
+            </section>
+            <section id="pricing">
+                <div class="price-plan">
+                    <div class="level">
+                            TENOR TROMBONE
+                    </div>
+                    <h2>$600</h2>
+                    <button class="btn">Select</button>
+                </div>
+                <div class="price-plan">
+                        <div class="level">
+                                BASS TROMBONE
+                        </div>
+                        <h2>$900</h2>
+                        <button class="btn">Select</button>
+                </div>
+                <div class="price-plan">
+                        <div class="level">
+                                VALVE TROMBONE
+                        </div>
+                        <h2>$1200</h2>
+                        <button class="btn">Select</button>
+                </div>
+            </section>
+            <footer>
+                    <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Contact</a></li>
+                    </ul>
+                    <span>Copyright 2016, Original Trombones</span>
+            </footer>
+        </div>
 
 
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
